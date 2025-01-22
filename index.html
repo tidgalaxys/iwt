@@ -3,8 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home Page</title>
+  <META HTTP-EQUIV="Cache-Control" CONTENT="no-cache">
+  <META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+  <META HTTP-EQUIV="Expires:0">  
+  <title>IWT2025</title>
+    <!-- jQuery CDN -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
   <style>
 
     .navbar {
@@ -60,8 +67,17 @@
       <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
+            <a id="home_link" class="nav-link active" aria-current="page" href="#" onclick="fn_test('part1')">Home</a>
           </li>
+
+          <li class="nav-item">
+            <a id="submission_link" class="nav-link active" aria-current="page" href="#" onclick="fn_test('part2')">Submission</a>
+          </li>           
+
+          <li class="nav-item">
+            <a id="registration_link" class="nav-link active" aria-current="page" href="#" onclick="fn_test('part3')">Registration</a>
+          </li>  
+
         </ul>
       </div>
     </div>
@@ -69,8 +85,69 @@
 
   <!-- Page Container -->
 
- 
+<!-- Modal for Progress Spinner -->
+<div class="modal" id="progressModal" tabindex="-1" aria-labelledby="progressModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="progressModalLabel">Processing...</h5>
+      </div>
+      <div class="modal-body text-center">
+        <!-- Spinner -->
+        <div class="spinner-border" role="status">
+          <span class="sr-only">Loading...</span>
+        </div>
+        <p>Please wait...</p>
+      </div>
+    </div>
+  </div>
+</div>
 
+
+ 
+<div id="id_part1">
+
+  <div class="container mt-5 d-flex justify-content-center">
+    <b style="font-size: 32px;">IWT 2025</b>
+  </div>
+
+  <div class="container mt-2 d-flex justify-content-center">
+    <b style="font-size: 20px;">The 7th International Conference of Inland Waterway Transport</b>
+  </div>
+
+  <div class="container mt-2 d-flex justify-content-center">
+    <b style="font-size: 20px;">In collaboration with UNESCAP</b>
+  </div>
+  
+  <div class="container mt-2 d-flex justify-content-center">
+    <b style="font-size: 20px;">on</b>
+  </div>
+
+  <div class="container mt-2 d-flex justify-content-center">
+    <b style="font-size: 20px;">Promoting Sustainability of Inland Waterway Transport and Logistics</b>
+  </div>
+
+  <div class="container mt-2 d-flex justify-content-center">
+    <b style="font-size: 20px;">16-18 July 2025</b>
+  </div>
+
+  <div class="container mt-2 d-flex justify-content-center">
+    <b style="font-size: 20px;">Chiang Rai, Thailand</b>
+  </div>
+
+  <div class="container mt-4 d-flex justify-content-center">
+    Hosted by
+  </div>
+  <div class="container mt-1 d-flex justify-content-center">
+    Chulalongkorn Business School, Chulalongkorn University
+  </div>
+  <div class="container mt-1 d-flex justify-content-center">
+    Logistics and Supply Chain Management Program, Graduate School, Chulalongkorn University
+  </div>
+  <div class="container mt-1 d-flex justify-content-center">
+    Mae Fah Luang University
+  </div>
+  
   <div class="container mt-5 d-flex justify-content-center">
     <div class="image-container">
       <img src="mba2.jpeg" alt="Centered Image" class="img-fluid">
@@ -78,67 +155,54 @@
     </div>
   </div>
 
-  <div class="container mt-5 d-flex justify-content-center">
-    <b>IWT 2025</b>
+    <div class="container mt-5 d-flex justify-content-left">
+    <b>Introduction</b>
   </div>
 
-  <div class="container mt-2 d-flex justify-content-center">
-    <b>The 7th International Conference</b>
+  <div class="container mt-3 d-flex justify-content-left">
+    The 7th International Conference of Inland Waterway Transport, themed “Promoting Sustainability of Inland Waterway Transport and Logistics,” will be held in Chiang Rai, Thailand, from 16-18 July 2025. The event is hosted by Chulalongkorn Business School, the Logistics and Supply Chain Management Program, Chulalongkorn University, and Mae Fah Luang University in collaboration with the United Nations Economic and Social Commission for Asia and the Pacific (UNESCAP). This conference highlights the importance of developing sustainable and efficient inland waterway transport systems to drive regional and global progress.
   </div>
 
-  <div class="container mt-2 d-flex justify-content-center">
-    <b>Inland Waterway Transport</b>
+  <div class="container mt-3 d-flex justify-content-left">    
+    This year, the conference focuses on the transformative potential of inland waterways in enhancing economic connectivity, promoting environmental sustainability, and fostering social cohesion. Rivers such as those in China and Thailand have long served as vital arteries for trade, transportation, and cultural exchange, offering eco-friendly alternatives to traditional land and air logistics networks. These waterways contribute significantly to reducing carbon emissions, easing traffic congestion, and providing cost-effective solutions for transporting goods and people.
   </div>
 
-  <div class="container mt-2 d-flex justify-content-center">
-    <b>Promoting sustainability of Inland Waterway Transport and Logistics</b>
+  <div class="container mt-3 d-flex justify-content-left">
+     While the primary emphasis remains on sustainability, the conference will also explore the role of digitalization and emerging technologies in enhancing the efficiency and reliability of inland waterway systems. Advances in AI-driven analytics, smart navigation, and digital platforms provide valuable tools for optimizing operations and supporting environmentally sustainable practices.  
   </div>
 
-  <div class="container mt-2 d-flex justify-content-center">
-    16-18 July 2025
+  <div class="container mt-3 d-flex justify-content-left">
+  Bringing together researchers, policymakers, business leaders, and industry experts, the conference aims to foster collaboration, share insights, and develop actionable strategies to address the challenges and opportunities in inland waterway transport and logistics. It will serve as a platform to highlight how sustainable practices, complemented by modern technological tools, can shape the future of global logistics networks.  
   </div>
 
-  <div class="container mt-2 d-flex justify-content-center">
-    Chiang Rai, Thailand
-  </div>
 
-  <div class="container mt-4 d-flex justify-content-center">
-    Host by
-  </div>
-  <div class="container mt-1 d-flex justify-content-center">
-    Chulalongkorn Business School, Chualongkorn University
-  </div>
-  <div class="container mt-1 d-flex justify-content-center">
-    Supply Chain and logistics Management Program, Chualongkorn University
-  </div>
-  <div class="container mt-1 d-flex justify-content-center">
-    Mae Fah Luang University
+    
+  <div class="container mt-5 d-flex justify-content-left">
+    Conference Date: 16-18 June 2025
   </div>
 
   <div class="container mt-5 d-flex justify-content-left">
-    Date: 16-18 June 2025
-  </div>
-  <div class="container mt-1 d-flex justify-content-left">
-  Venue:  Mae Fah Luang University, Chiang Rai, Thailand 
+  Venue:  Mae Fah Luang University, Chiang Rai, Thailand
   </div>
 
-  <div class="container mt-1 d-flex justify-content-left">
+
+  <div class="container mt-5 d-flex justify-content-left">
   Key dates:
 </div>
   <div class="container mt-1 d-flex justify-content-center">
     <table class="table table-bordered">
         <thead>
-            <th scope="col">Paper Submission</th>
+            <th scope="col" style="background-color: yellow;">Paper Submission</th>
             <th scope="col"></th>                  
         </thead>
         <tbody>
           <tr>
             <td>March 1, 2025</td>
-            <td>Open for Submission</td>
+            <td>Open for Submission of Abstracts</td>
           </tr>
           <tr>
             <td>April 30, 2025</td>
-            <td>Submission of Abstracts/Full Papers</td>
+            <td>Submission of Extended Abstracts/ Full papers</td>
           </tr>
           <tr>
             <td>May 15, 2025</td>
@@ -159,7 +223,7 @@
         </tbody>
         <thead>        
           <tr>            
-            <th scope="col">Registration</th>
+            <th scope="col" style="background-color: yellow;">Registration</th>
             <th scope="col"></th>           
           </tr>
         </thead>
@@ -167,11 +231,7 @@
           <tr>
             <td>May 1, 2025</td>
             <td>Registration Open</td>
-          </tr>
-          <tr>
-            <td>June 1, 2025</td>
-            <td>Early Bird Registration Closing Date</td>
-          </tr>
+          </tr>       
           <tr>
             <td>June 15, 2025</td>
             <td>Registration Closing Date</td>
@@ -180,10 +240,203 @@
             <td>July 16-18, 2025</td>
             <td>Conference</td>
           </tr>
+          <tr>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+          </tr>
         </tbody>
       </table>
 
     </div>
+
+
+    <div class="container mt-5 d-flex justify-content-left">
+        <b>Topics of Interest</b>
+    </div>
+
+    <div class="container mt-3 d-flex justify-content-left">
+        The conference welcomes submissions of high-quality research papers on topics related to inland waterway transport and logistics, including but not limited to:
+    </div>
+
+    <div class="container mt-3 d-flex justify-content-left">
+      <ol>
+        <li><strong>Sustainability and Green Practices</strong>
+          <ul>
+            <li>Decarbonization of river shipping</li>
+            <li>River ships powered by renewable energy</li>
+            <li>Green logistics between river-inland transport networks</li>
+            <li>River-sea intermodal transportation networks</li>
+          </ul>
+        </li>
+        <li><strong>Smart and Digital Innovations</strong>
+          <ul>
+            <li>Smart river port development</li>
+            <li>Digitalization of inland waterway transport</li>
+            <li>Single-window systems for river cross-border operations</li>
+            <li>AI and optimization models for river transport</li>
+          </ul>
+        </li>
+        <li><strong>Policy, Safety, and Operational Models</strong>
+          <ul>
+            <li>Integrated inland-waterway and multimodal transport systems</li>
+            <li>Trends, challenges, and policies in inland waterway transport</li>
+            <li>Safety measures in river shipping</li>
+            <li>River shipping operation case studies (e.g., Mekong River, Yangtze River)</li>
+          </ul>
+        </li>
+        <li><strong>Infrastructure and Ecosystems</strong>
+          <ul>
+            <li>River port development models</li>
+            <li>Canal construction and operation</li>
+            <li>Ecosystems for river-city interfaces</li>
+            <li>Barging systems in river transport</li>
+          </ul>
+        </li>
+        <li><strong>Regional Focus and Case Studies</strong>
+          <ul>
+            <li>Best practices and innovations in the Mekong River Basin</li>
+            <li>Comparative studies of inland waterway transport systems across regions</li>
+            <li>River cruiser tourism and sustainable development</li>
+          </ul>
+        </li>
+      </ol>
+    </div>
+
+    <div class="container mt-3 d-flex justify-content-left">
+        This conference aims to foster collaboration and innovation, paving the way for the future of sustainable inland waterway transport and logistics. Participants are encouraged to submit their research and contribute to meaningful discussions that will shape tomorrow's policies and practices.
+    </div>
+
+    <div class="container mt-5 d-flex justify-content-left">
+    <b style="font-size: 30px;">Conference Chariperson:</b>
+    </div>
+    <div class="container mt-0 d-flex justify-content-left">
+    <span style="font-size: 18px;">Professor Paul Tae-Woo Lee</span>
+    </div>
+    <div class="container mt-0 d-flex justify-content-left">
+    <span style="font-size: 18px;">Director, Maritime Logistics and Free Trade Research Islands Research Center</span>
+    </div>
+    <div class="container mt-0 d-flex justify-content-left">
+     <span style="font-size: 18px;">Ocean College, Zhejiang University, China</span>
+    </div>
+
+
+    <div class="container mt-3 d-flex justify-content-left">
+     <span style="font-size: 18px;">Assoc.Prof.Siri-on Setamanit</span>
+    </div>
+    <div class="container mt-1 d-flex justify-content-left">
+     <span style="font-size: 18px;">Director, Logistics and Supply Chain Management Program</span>
+    </div>
+        <div class="container mt-1 d-flex justify-content-left">
+     <span style="font-size: 18px;">Graduate School, and  Chulalongkorn Business School, Chulalongkorn University</span>
+    </div>
+
+    <div class="container mt-3 d-flex justify-content-left">
+        <b style="font-size: 30px;">Conference Organizer:</b>
+    </div>
+     <div class="container mt-0 d-flex justify-content-left">
+         <span style="font-size: 18px;">Chulalongkorn Business School, Chulalongkorn University</span>
+    </div>
+    <div class="container mt-0 d-flex justify-content-left">
+        <span style="font-size: 18px;">Logistics and Supply Chain Management Program, Graduate School, Chulalongkorn University</span>
+    </div>
+    <div class="container mt-0 d-flex justify-content-left">
+        <span style="font-size: 18px;">Mae Fah Luang University</span>
+    </div>
+
+     <div class="container mt-3 d-flex justify-content-left">
+        <b style="font-size: 30px;">Conference Co-organizer:</b>
+    </div>
+     <div class="container mt-0 d-flex justify-content-left">
+         <span style="font-size: 18px;">Transport Division</span>
+    </div>
+    <div class="container mt-0 d-flex justify-content-left">
+        <span style="font-size: 18px;">United Nations Economic and Social Commission for Asia and the Pacific (UNESCAP)</span>
+    </div>
+
+    <div class="container mt-3 d-flex justify-content-left">
+        <b style="font-size: 30px;">Conference Secretary:</b>
+    </div>
+     <div class="container mt-0 d-flex justify-content-left">
+         <span style="font-size: 18px;">Ms. Chalita Ouparanong</span>
+    </div>
+    <div class="container mt-1 d-flex justify-content-left">
+        <span style="font-size: 18px;">Logistics and Supply Chain Management Program,</span>
+    </div>
+    <div class="container mt-0 d-flex justify-content-left">
+        <span style="font-size: 18px;">Graduate School, Chulalongkorn University</span>
+    </div>
+   <div class="container mt-0 d-flex justify-content-left">
+        <b style="font-size: 15px;">E-mail:  iwt2025@chula.ac.th</b>
+    </div>
+    
+
+    <div class="container mt-3 d-flex justify-content-left">
+        <b style="font-size: 30px;">Conference Supporters:</b>
+    </div>
+
+    <div class="container mt-3 d-flex justify-content-left">
+        <b style="font-size: 30px;">International Organizing Committee:</b>
+    </div>
+
+    <div class="container mt-3 d-flex justify-content-left">
+  <ul>
+    <li>Kamonchanok Suthiwartnarueput, Chulalongkorn University, Thailand</li>
+    <li>Paul Tae-Woo Lee, Zhejiang University, China</li>
+    <li>Di Zhang, Wuhan University of Technology, China</li>
+    <li>Ming K. Lim, University of Glasgow, UK</li>
+    <li>Yingen Ge, Chang’an University, China</li>
+    <li>Zhongzhen Yang, Ningbo University, China</li>
+    <li>Kevin X. Li, Zhejiang University, China</li>
+    <li>Xuehao Feng, Zhejiang University, China</li>
+    <li>Adolf K.Y. Ng, University of International College, China</li>
+    <li>Ilkyeong Moon, Seoul National University, Republic of Korea</li>
+    <li>Jasmine Siu Lee Lam, Technical University of Denmark, Denmark</li>
+    <li>Jihong Chen, Shenzhen University, China</li>
+    <li>Jingbo Yin, Shanghai Jiatong University, China</li>
+    <li>Kaphwan Kim, Zhejiang University, China</li>
+    <li>Koichiro Tezuka, Nihon University, Japan</li>
+    <li>Kyoung-Sook Choi, Jeonbuk National University, Republic of Korea</li>
+    <li>Masato Ishii, Sophia University, Japan</li>
+    <li>Prasanta Sahu, BITS Pilani, Hyderabad, India</li>
+    <li>Prem Chhetri, RMIT University, Australia</li>
+    <li>Shiyuan Zheng, Shanghai Maritime University, China</li>
+    <li>Soohan Woo, Choong-Ang University, Republic of Korea</li>
+    <li>Srikanta Routroy, Birla Institute of Technology & Science, India</li>
+    <li>Theo Notteboom, Ghent University, Belgium</li>
+    <li>Veera Pandiyan Kaliani Sundram, Universiti Teknologi MARA, Malaysia</li>
+    <li>Weihua Liu, Tianjin University, China</li>
+    <li>Xiaowen Fu, The Hong Kong Polytechnic University, China</li>
+    <li>Yongjin Kim, Inha University, Republic of Korea</li>
+    <li>Zaili Yang, Liverpool John Moores University, UK</li>
+  </ul>
+</div>
+
+    <div class="container mt-3 d-flex justify-content-left">
+        <b style="font-size: 30px;">Local Organizing Committee:</b>
+    </div>
+    <div class="container mt-3 d-flex justify-content-left">
+  <ul>
+    <li>Tartat Mokkhamakkul, Chulalongkorn Business School, Chulalongkorn University, Thailand</li>
+    <li>Somchanok Passakonjaras, Chulalongkorn Business School, Chulalongkorn University, Thailand</li>
+    <li>Siri-on Setamanit, Logistics and Supply Chain Management Program, Chulalongkorn University, Thailand</li>
+    <li>Paveena Chaovalitwongse, Logistics and Supply Chain Management Program, Chulalongkorn University, Thailand</li>
+    <li>Krisana Visamitanan, Logistics and Supply Chain Management Program, Chulalongkorn University, Thailand</li>
+    <li>Nuttapol Assarut, Logistics and Supply Chain Management Program, Chulalongkorn University, Thailand</li>
+    <li>Danupon Ariyasajjakorn, Logistics and Supply Chain Management Program, Chulalongkorn University, Thailand</li>
+    <li>Saksith Chalermpong, Logistics and Supply Chain Management Program, Chulalongkorn University, Thailand</li>
+    <li>Sineenat Sermcheep, Logistics and Supply Chain Management Program, Chulalongkorn University, Thailand</li>
+    <li>Chackrit Duangphastra, Logistics and Supply Chain Management Program, Chulalongkorn University, Thailand</li>
+  </ul>
+</div>
+    
+     <div class="container mt-3 d-flex justify-content-left">
+        
+    </div>
+
+
+
+
+
 
     <!-- <div class="container mt-5 d-flex justify-content-left">
         Tentative conference Program
@@ -339,10 +592,254 @@
         (located in front of Mae Fah Luang University)
     </div> -->
     
+  </div>
+
+<div id="id_part2" style="display:none"> <!-- Submission -->
+       <div class="container mt-5">
+        <h1 class="text-center mb-4">Submit Your Paper</h1>
+      <form id="myForm" enctype="multipart/form-data" class="shadow p-4 rounded bg-light">
+    <div class="mb-3">
+        <label for="first_name" class="form-label">First Name</label>
+        <input type="text" class="form-control" id="first_name" name="first_name" required>
+    </div>
+    <div class="mb-3">
+        <label for="last_name" class="form-label">Last Name</label>
+        <input type="text" class="form-control" id="last_name" name="last_name" required>
+    </div>
+    <div class="mb-3">
+        <label for="email_address" class="form-label">Email Address</label>
+        <input type="email" class="form-control" id="email_address" name="email_address" required>
+    </div>
+    <div class="mb-3">
+        <label for="file_paper" class="form-label">Upload Paper</label>
+        <input type="file" class="form-control" id="file_paper" name="file_paper" accept=".pdf,.doc,.docx" required>
+    </div>
+    <button type="button" id="submitForm" class="btn btn-primary w-100">Submit</button>
+</form>
+           
+    </div>
+</div>
+
+<!-- 
+
+https://www.ipba2024bangkok.com/key-dates   
+https://docs.google.com/forms/d/e/1FAIpQLScZevnGoBpr3vvZm_37WcHyTZ6GP1OvziBEQJXL6Dw67q0O5w/viewform?pli=1 
+1. ต้องออกแบบ ฐานข้อมูล ใน front end การ Register Form by using email   
+2. ใช้ instruction to payament ( credit card or pay transfer payment      
+3. ต้องออกแบบ ฐานข้อมูล ใน back end by using datatable for edit isapproved paper and send mail to user to registration next
+4. export excel (all,isapprove,ispayment)
+
+-->
+
+<div id="id_part3" style="display:none"> <!--Register -->
+
+       <div class="container mt-5">
+        <h1 class="text-center mb-4">Registration Form</h1> 
+           <form id="frmregister" enctype="multipart/form-data" class="shadow p-4 rounded bg-light">
+                <div class="mb-3">
+                    <label for="email_address" class="form-label">Email Address</label>
+                    <input type="email" class="form-control" id="email_address2" name="email_address2" required>
+                </div>
+                <div class="mb-3">
+                    <label for="first_name" class="form-label">First Name</label>
+                    <input type="text" class="form-control" id="first_name2" name="first_name2" required readonly>
+                </div>
+                <div class="mb-3">
+                    <label for="last_name" class="form-label">Last Name</label>
+                    <input type="text" class="form-control" id="last_name2" name="last_name2" required readonly>
+                </div>
+                <div class="mb-3">
+                    <label for="Paper_File" class="form-label">Paper FileName</label>
+                    <input type="text" class="form-control" id="filename_paper2" name="filename_paper2" required readonly>
+                </div>
+
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold">Payment Methods</h5>
+                        <ul class="list-group mb-3">
+                            <li class="list-group-item">
+                                After your contribution is accepted, proceed to  
+                                <a href="http://payment.acc.chula.ac.th/Fee/Admission/11294" target="_blank" class="fw-bold text-primary">http://payment.acc.chula.ac.th/Fee/Admission/11294</a> 
+                                for a credit card payment.
+                            </li>
+                            <li class="list-group-item">
+                                <strong>[Optional] Pay via bank transfer.</strong><br />
+                                <strong>A/C NAME:</strong> FACULTY OF COMMERCE AND ACCOUNTANCY CHULALONGKORN UNIVERSITY <br />
+                                <strong>ADDRESS:</strong> 254 PHAYATHAI ROAD, WANGMAI, PATUMWAN, BANGKOK 10330 THAILAND <br />
+                                <strong>A/C NO:</strong> 045-2-21885-1<br />
+                                <strong>BANK:</strong> SIAM COMMERCIAL BANK PCL<br />
+                                <strong>BRANCH:</strong> SAPHAKACHAT THAI<br />
+                                <strong>SWIFT CODE:</strong> SICOTHBK<br />
+                                <strong>ADDRESS:</strong> 1873 HENRY DO NANT RD, PATUMWAN, BANGKOK 10330 THAILAND
+                            </li>
+                        </ul>
+
+                        <label for="file_payment" class="form-label text-danger fw-bold">Please upload proof of payment*</label>        
+                        <input type="file" class="form-control" id="file_payment" name="file_payment" accept=".pdf,.jpeg,.jpg,.png" required>
+                        <small class="text-danger d-none" id="Small1">Allowed formats: PDF, JPEG, JPG, PNG</small>
+                    </div>
+                </div>
 
 
 
-  <!-- Bootstrap JS -->
+              
+                <button type="button" id="btnregister" class="btn btn-primary w-100">Submit</button>
+            </form>                           
+    </div>
+</div>    
+    
+    <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+
+<script>
+
+    document.getElementById('home_link').style.textDecoration = 'underline';
+
+
+    $(document).ready(function () {
+        // Handle form submission via AJAX
+        $("#submitForm").click(function (e) {
+            e.preventDefault(); // Prevent default form submission
+
+            $('#progressModal').modal('show');
+
+            // Prepare form data using FormData object
+            var formData = new FormData($("#myForm")[0]);
+
+            // Make AJAX request
+            $.ajax({
+                type: "POST",
+                url: "frmsubmit_proc2.php",
+                data: formData,
+                processData: false,  // Tell jQuery not to process the data
+                contentType: false,  // Tell jQuery not to set contentType
+                success: function (response) {
+                    console.log(response);  // Handle the response from the server
+                    var data = JSON.parse(response);
+                    $('#progressModal').modal('hide'); 
+                    if (data.status === 'success') {
+                        alert(data.message);
+                        // Clear the form
+                        $('#myForm')[0].reset();  // This will reset all the fields in the form
+                        
+                    } else {
+                        alert(data.message);
+                    }                    
+                   
+                },
+                error: function (xhr, status, error) {
+                    console.error(xhr.responseText);  // Handle errors
+                    alert("An error occurred while submitting the form.");
+                }
+            });
+        });
+
+
+        $("#email_address2").blur(function() {
+            let email = $(this).val();
+            let feedback = $("#emailFeedback");
+
+            // Clear previous values
+            $("#first_name2, #last_name2, #Paper_FileName2").val("");
+
+            if (email.trim() === "") {
+                feedback.text("Email cannot be empty.").removeClass("d-none");
+                return;
+            }
+
+            // Perform AJAX request to fetch user details
+            $.ajax({
+                url: "getuserinfo.php",  // 🔹 Replace with your actual server-side script
+                method: "POST",
+                dataType: "json",
+                data: { email: email },
+                beforeSend: function() {
+                    $("#email_address2").addClass("loading"); // Optional: Add a loading indicator
+                },
+                success: function(response) {
+                    if (response.status === "found") {
+                        $("#first_name2").val(response.first_name);
+                        $("#last_name2").val(response.last_name);
+                        $("#filename_paper2").val(response.filename_paper);
+                        feedback.text("").addClass("d-none"); // Hide error message
+                        $("#email_address2").removeClass("loading"); // Remove loading indicator
+                    } else {
+                        feedback.text("Email not found. Please enter details manually.").removeClass("d-none");
+                    }
+                },
+                error: function() {
+                    feedback.text("Error retrieving data. Try again later.").removeClass("d-none");
+                }
+            });
+        });
+
+
+        // Handle form registration via AJAX
+        $("#btnregister").click(function (e) {
+            e.preventDefault(); // Prevent default form submission
+
+            $('#progressModal').modal('show');
+            
+            var formData = new FormData();
+            formData.append("email_address2", $("#email_address2").val());
+            formData.append("file_payment", $("#file_payment")[0].files[0]);
+
+            // Make AJAX request
+            $.ajax({
+                type: "POST",
+                url: "frmregister_proc2.php",
+                data: formData,
+                processData: false,  // Tell jQuery not to process the data
+                contentType: false,  // Tell jQuery not to set contentType
+                success: function (response) {
+                    console.log(response);  // Handle the response from the server
+                    var data = JSON.parse(response);
+                    $('#progressModal').modal('hide');
+                    if (data.status === 'success') {
+                        alert(data.message);
+                        // Clear the form
+                        $('#frmregister')[0].reset();  // This will reset all the fields in the form
+                        
+                    } else {
+                        alert(data.message);
+                    }                    
+                   
+                },
+                error: function (xhr, status, error) {
+                    console.error(xhr.responseText);  // Handle errors
+                    alert("An error occurred while submitting the form.");
+                }
+            });
+        });
+    
+    });
+
+
+    function fn_test(para) {
+        // Hide both sections first
+        document.getElementById('id_part1').style.display = 'none';
+        document.getElementById('id_part2').style.display = 'none';
+        document.getElementById('id_part3').style.display = 'none';
+
+        document.getElementById('home_link').style.textDecoration = 'none';
+        document.getElementById('submission_link').style.textDecoration = 'none';
+        document.getElementById('registration_link').style.textDecoration = 'none';
+
+        // Check if the parameter is 'part1' or 'part2' and display accordingly
+        if (para === 'part1') {
+            document.getElementById('id_part1').style.display = '';  // Show part1
+            document.getElementById('home_link').style.textDecoration = 'underline';
+        } else if (para === 'part2') {
+            document.getElementById('id_part2').style.display = '';  // Show part2
+            document.getElementById('submission_link').style.textDecoration = 'underline';
+        } else if (para === 'part3') {
+            document.getElementById('id_part3').style.display = '';  // Show part3
+            document.getElementById('registration_link').style.textDecoration = 'underline';
+        }
+    }
+
+
+
+</script>
